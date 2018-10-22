@@ -5,8 +5,8 @@ This problem provides practice at:
   ***  FOR and WHILE loops.  ***
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Hunter Hicks.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ########################################################################
 # Students:
@@ -36,6 +36,7 @@ def main():
     """ Calls the   TEST   functions in this module. """
     run_test_practice_problem3()
 
+
 # ----------------------------------------------------------------------
 # Students: Some of the testing code below uses SimpleTestCase objects,
 #           from the imported   simple_testing (st)   module.
@@ -45,7 +46,7 @@ def main():
 def run_test_practice_problem3():
     """ Tests the   practice_problem3  function. """
     ####################################################################
-    # TODO: 2. Implement this TEST function.
+    # Done: 2. Implement this TEST function.
     #   It TESTS the  practice_problem3  function defined below.
     #   Include at least ** 2 ** ADDITIONAL tests beyond those we wrote.
     #
@@ -111,6 +112,9 @@ def run_test_practice_problem3():
                                [286602]),
              ]
     # 14th test:
+    test2 = st.SimpleTestCase(practice_problem3,
+                              [10, 2, .5],
+                              [13, 14])
     big_list = []
     for k in range(888, 1888):
         big_list.append(k)
@@ -123,6 +127,7 @@ def run_test_practice_problem3():
     # Run the 14 tests in the   tests   list constructed above.
     # ------------------------------------------------------------------
     st.SimpleTestCase.run_tests('practice_problem3', tests)
+    st.SimpleTestCase.run_test(test2)
 
     ####################################################################
     # TO DO 2 continued:  More tests:
@@ -216,6 +221,17 @@ def practice_problem3(start, n, threshold):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   < 15 minutes.
     ####################################################################
+    new = []
+    q = start
+    w = 0
+    while True:
+        if w == n:
+            break
+        if math.cos(q) + math.sin(q) > threshold:
+            new.append(q)
+            w = w + 1
+        q = q + 1
+    return new
 
 
 # ----------------------------------------------------------------------
